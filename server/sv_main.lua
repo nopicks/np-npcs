@@ -80,10 +80,11 @@ end)
 function GenerateShopKeepers()
     for _, location in ipairs(Generic.ShopKeeperLocations) do
         Generic.NPCS[#Generic.NPCS + 1] = {
-            id = ("shopkeeper_%s"):format(_),
+            id = "shopkeeper",
             name = ("Shop Keeper %s"):format(_),
             pedType = 4,
             model = "mp_m_shopkeep_01",
+            scenario = "WORLD_HUMAN_STAND_MOBILE",
             networked = false,
             distance = 25.0,
             position = {
@@ -99,8 +100,8 @@ function GenerateShopKeepers()
             },
             flags = {
                 ['isNPC'] = true,
+                ['isShopKeeper'] = true,
             },
-            scenario = "WORLD_HUMAN_STAND_MOBILE"
         }
     end
 end
@@ -254,7 +255,7 @@ end
 function GenerateArenaGrassSwapper()
     for _, location in ipairs(Generic.ArenaGrassSwapper) do
         Generic.NPCS[#Generic.NPCS + 1] = {
-            id = "paintball_arena_grass_swapper",
+            id = ("paintball_arena_grass_swapper_%s"):format(_),
             name = ("Paintball Arena Grass Swapper %s"):format(_),
             pedType = 4,
             model = "s_m_y_construct_01",
@@ -309,7 +310,7 @@ end
 function GenerateSionisMaterials()
     for _, location in ipairs(Generic.SionisMaterials) do
         Generic.NPCS[#Generic.NPCS + 1] = {
-            id = "stonis_materials",
+            id = "sionis_material_worker",
             name = ("Stonis Materials %s"):format(_),
             pedType = 4,
             model = "s_m_m_lathandy_01",
@@ -452,7 +453,7 @@ end
 function GenerateCGJewelryVendors()
     for _, location in ipairs(Generic.CGJewelryVendor) do
         Generic.NPCS[#Generic.NPCS + 1] = {
-            id = "cgjewelry_vendor",
+            id = "cgjvendor",
             name = ("Jewelry Vendor %s"):format(_),
             pedType = 4,
             model = "s_m_y_devinsec_01",
@@ -479,7 +480,7 @@ end
 function GenerateSportShopKeepers()
     for _, location in ipairs(Generic.SportShopLocations) do
         Generic.NPCS[#Generic.NPCS + 1] = {
-            id = "sportshop",
+            id = "sportshop_keeper",
             name = ("Sport Shop %s"):format(_),
             pedType = 4,
             model = "ig_hunter",
@@ -498,6 +499,7 @@ function GenerateSportShopKeepers()
             },
             flags = {
                 ['isNPC'] = true,
+                ['isSportShopKeeper'] = true,
             },
         }
     end
@@ -641,7 +643,7 @@ end
 function GenerateCasinoHotelVendors()
     for _, location in ipairs(Generic.CasinoHotelVendor) do
         Generic.NPCS[#Generic.NPCS + 1] = {
-            id = "casino_hotel_vendor",
+            id = "casino_hotel_worker",
             name = ("Casino Hotel Vendor %s"):format(_),
             pedType = 4,
             model = "s_f_y_casino_01",
@@ -668,7 +670,7 @@ end
 function GenerateXCoinRedeem()
     for _, location in ipairs(Generic.XCoinRedeem) do
         Generic.NPCS[#Generic.NPCS + 1] = {
-            id = "xcoinredeem",
+            id = ("xcoinredeem_%s"):format(_),
             name = ("XCoinRedeem %s"):format(_),
             pedType = 4,
             model = "hc_hacker",
@@ -695,7 +697,7 @@ end
 function GenerateGangSprayVendors()
     for _, location in ipairs(Generic.GangSprayVendor) do
         Generic.NPCS[#Generic.NPCS + 1] = {
-            id = "gang_spray_vendor",
+            id = ("gangspray_%s"):format(_),
             name = ("Gang Spray Vendor %s"):format(_),
             pedType = 4,
             model = "g_m_y_famfor_01",
@@ -1016,7 +1018,7 @@ end
 function GenerateWeedShopKeepers()
     for _, location in ipairs(Generic.WeedShopLocations) do
         Generic.NPCS[#Generic.NPCS + 1] = {
-            id = "weedshoplocations",
+            id = "weedshop_keeper",
             name = ("Weed Shop %s"):format(_),
             pedType = 4,
             model = "s_m_m_bouncer_02",
@@ -1035,6 +1037,7 @@ function GenerateWeedShopKeepers()
             },
             flags = {
                 ['isNPC'] = true,
+                ['isWeedShopKeeper'] = true,
             },
         }
     end
@@ -1098,7 +1101,7 @@ end
 function GenerateJobVehicleNPCs()
     for _, location in ipairs(Generic.JobVehLocations) do
         Generic.NPCS[#Generic.NPCS + 1] = {
-            id = "jobvehlocations",
+            id = "jobveh_keeper",
             name = ("Job Veh %s"):format(_),
             pedType = 4,
             model = "a_m_m_business_01",
@@ -1118,6 +1121,7 @@ function GenerateJobVehicleNPCs()
             },
             flags = {
                 ['isNPC'] = true,
+                ['isJobVehShopKeeper'] = true,
             },
         }
     end
@@ -1126,7 +1130,7 @@ end
 function GenerateWineryBuyLocations()
     for _, location in ipairs(Generic.WineryBuyLocations) do
         Generic.NPCS[#Generic.NPCS + 1] = {
-            id = "winerybuylocations",
+            id = "winery_keeper_goods",
             name = ("Winery Buy %s"):format(_),
             pedType = 4,
             model = "a_f_y_business_02",
@@ -1146,6 +1150,7 @@ function GenerateWineryBuyLocations()
             },
             flags = {
                 ['isNPC'] = true,
+                ['isWineryShopKeeper'] = true,
             },
         }
     end
